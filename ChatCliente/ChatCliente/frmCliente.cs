@@ -173,5 +173,10 @@ namespace ChatCliente
                 tcpServidor.Close();
             }
         }
+
+        private void lblfiles_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

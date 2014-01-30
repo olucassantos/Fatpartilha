@@ -36,13 +36,15 @@
             this.btnConectar = new System.Windows.Forms.Button();
             this.txtMensagem = new System.Windows.Forms.TextBox();
             this.btnEnviar = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.lblfiles = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtServidorIP
             // 
             this.txtServidorIP.Location = new System.Drawing.Point(90, 23);
             this.txtServidorIP.Name = "txtServidorIP";
-            this.txtServidorIP.Size = new System.Drawing.Size(169, 20);
+            this.txtServidorIP.Size = new System.Drawing.Size(273, 20);
             this.txtServidorIP.TabIndex = 0;
             // 
             // txtUsuario
@@ -99,20 +101,41 @@
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(279, 430);
+            this.btnEnviar.Location = new System.Drawing.Point(265, 428);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(84, 23);
+            this.btnEnviar.Size = new System.Drawing.Size(95, 23);
             this.btnEnviar.TabIndex = 7;
             this.btnEnviar.Text = "&Enviar";
             this.btnEnviar.UseVisualStyleBackColor = true;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(369, 123);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(267, 327);
+            this.listView1.TabIndex = 8;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // lblfiles
+            // 
+            this.lblfiles.AutoSize = true;
+            this.lblfiles.Font = new System.Drawing.Font("Trebuchet MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfiles.Location = new System.Drawing.Point(411, 92);
+            this.lblfiles.Name = "lblfiles";
+            this.lblfiles.Size = new System.Drawing.Size(196, 26);
+            this.lblfiles.TabIndex = 9;
+            this.lblfiles.Text = "Arquivos disponiveis";
+            this.lblfiles.Click += new System.EventHandler(this.lblfiles_Click);
             // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(382, 462);
+            this.ClientSize = new System.Drawing.Size(647, 462);
+            this.Controls.Add(this.lblfiles);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.txtMensagem);
             this.Controls.Add(this.btnConectar);
@@ -138,6 +161,8 @@
         private System.Windows.Forms.Button btnConectar;
         private System.Windows.Forms.TextBox txtMensagem;
         private System.Windows.Forms.Button btnEnviar;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label lblfiles;
     }
 }
 
