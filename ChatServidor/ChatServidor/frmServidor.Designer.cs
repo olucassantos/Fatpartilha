@@ -30,8 +30,12 @@
         {
             this.txtLog = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtIP = new System.Windows.Forms.TextBox();
             this.btnAtender = new System.Windows.Forms.Button();
+            this.usersList = new System.Windows.Forms.ListView();
+            this.txtIP = new System.Windows.Forms.TextBox();
+            this.attUsuarios = new System.Windows.Forms.Button();
+            this.mstMessage = new System.Windows.Forms.TextBox();
+            this.send = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtLog
@@ -52,13 +56,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Endereço IP : ";
             // 
-            // txtIP
-            // 
-            this.txtIP.Location = new System.Drawing.Point(94, 30);
-            this.txtIP.Name = "txtIP";
-            this.txtIP.Size = new System.Drawing.Size(179, 20);
-            this.txtIP.TabIndex = 2;
-            // 
             // btnAtender
             // 
             this.btnAtender.Location = new System.Drawing.Point(279, 27);
@@ -69,12 +66,59 @@
             this.btnAtender.UseVisualStyleBackColor = true;
             this.btnAtender.Click += new System.EventHandler(this.btnAtender_Click);
             // 
+            // usersList
+            // 
+            this.usersList.Location = new System.Drawing.Point(13, 361);
+            this.usersList.Name = "usersList";
+            this.usersList.Size = new System.Drawing.Size(390, 145);
+            this.usersList.TabIndex = 4;
+            this.usersList.UseCompatibleStateImageBehavior = false;
+            // 
+            // txtIP
+            // 
+            this.txtIP.Location = new System.Drawing.Point(94, 28);
+            this.txtIP.Name = "txtIP";
+            this.txtIP.Size = new System.Drawing.Size(179, 20);
+            this.txtIP.TabIndex = 2;
+            this.txtIP.Text = "127.0.0.1";
+            // 
+            // attUsuarios
+            // 
+            this.attUsuarios.Location = new System.Drawing.Point(279, 332);
+            this.attUsuarios.Name = "attUsuarios";
+            this.attUsuarios.Size = new System.Drawing.Size(124, 23);
+            this.attUsuarios.TabIndex = 5;
+            this.attUsuarios.Text = "Atualizar Lista";
+            this.attUsuarios.UseVisualStyleBackColor = true;
+            this.attUsuarios.Click += new System.EventHandler(this.attUsuarios_Click);
+            // 
+            // mstMessage
+            // 
+            this.mstMessage.Location = new System.Drawing.Point(13, 299);
+            this.mstMessage.Name = "mstMessage";
+            this.mstMessage.Size = new System.Drawing.Size(309, 20);
+            this.mstMessage.TabIndex = 6;
+            // 
+            // send
+            // 
+            this.send.Location = new System.Drawing.Point(328, 300);
+            this.send.Name = "send";
+            this.send.Size = new System.Drawing.Size(75, 19);
+            this.send.TabIndex = 7;
+            this.send.Text = "Enviar";
+            this.send.UseVisualStyleBackColor = true;
+            this.send.Click += new System.EventHandler(this.send_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
-            this.ClientSize = new System.Drawing.Size(418, 305);
+            this.ClientSize = new System.Drawing.Size(418, 518);
+            this.Controls.Add(this.send);
+            this.Controls.Add(this.mstMessage);
+            this.Controls.Add(this.attUsuarios);
+            this.Controls.Add(this.usersList);
             this.Controls.Add(this.btnAtender);
             this.Controls.Add(this.txtIP);
             this.Controls.Add(this.label1);
@@ -90,8 +134,12 @@
 
         private System.Windows.Forms.TextBox txtLog;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtIP;
         private System.Windows.Forms.Button btnAtender;
+        private System.Windows.Forms.ListView usersList;
+        private System.Windows.Forms.TextBox txtIP;
+        private System.Windows.Forms.Button attUsuarios;
+        private System.Windows.Forms.TextBox mstMessage;
+        private System.Windows.Forms.Button send;
     }
 }
 

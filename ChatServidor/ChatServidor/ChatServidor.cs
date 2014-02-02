@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
@@ -130,6 +131,24 @@ namespace ChatServidor
                     RemoveUsuario(tcpClientes[i]);
                 }
             }
+        }
+
+
+        public string[] usersList()
+        {
+            
+            String[] userlist = new String[50];
+
+            TcpClient[] tcpClientes = new TcpClient[ChatServidor.htUsuarios.Count];
+            ChatServidor.htUsuarios.Values.CopyTo(tcpClientes, 0);
+            int i = 0;
+            foreach (string key in ChatServidor.htUsuarios.Keys)
+            {
+                userlist[i] = key;
+                i ++;
+            }
+
+            return userlist;
         }
 
         // Envia mensagens de um usuário para todos os outros

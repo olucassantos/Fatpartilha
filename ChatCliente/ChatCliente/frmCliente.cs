@@ -63,7 +63,7 @@ namespace ChatCliente
                 txtUsuario.Enabled = false;
                 txtMensagem.Enabled = true;
                 btnEnviar.Enabled = true;
-                btnConectar.Text = "Desconectado";
+                btnConectar.Text = "Desconectar";
 
                 // Envia o nome do usuário ao servidor
                 stwEnviador = new StreamWriter(tcpServidor.GetStream());

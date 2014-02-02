@@ -44,12 +44,13 @@
             // 
             this.txtServidorIP.Location = new System.Drawing.Point(90, 23);
             this.txtServidorIP.Name = "txtServidorIP";
-            this.txtServidorIP.Size = new System.Drawing.Size(273, 20);
+            this.txtServidorIP.Size = new System.Drawing.Size(270, 20);
             this.txtServidorIP.TabIndex = 0;
+            this.txtServidorIP.Text = "127.0.0.1";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(90, 56);
+            this.txtUsuario.Location = new System.Drawing.Point(90, 57);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(169, 20);
             this.txtUsuario.TabIndex = 1;
@@ -83,7 +84,7 @@
             // 
             // btnConectar
             // 
-            this.btnConectar.Location = new System.Drawing.Point(285, 52);
+            this.btnConectar.Location = new System.Drawing.Point(286, 56);
             this.btnConectar.Name = "btnConectar";
             this.btnConectar.Size = new System.Drawing.Size(75, 23);
             this.btnConectar.TabIndex = 5;
@@ -111,9 +112,9 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(369, 123);
+            this.listView1.Location = new System.Drawing.Point(369, 92);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(267, 327);
+            this.listView1.Size = new System.Drawing.Size(267, 358);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -121,7 +122,7 @@
             // 
             this.lblfiles.AutoSize = true;
             this.lblfiles.Font = new System.Drawing.Font("Trebuchet MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfiles.Location = new System.Drawing.Point(411, 92);
+            this.lblfiles.Location = new System.Drawing.Point(410, 23);
             this.lblfiles.Name = "lblfiles";
             this.lblfiles.Size = new System.Drawing.Size(196, 26);
             this.lblfiles.TabIndex = 9;
