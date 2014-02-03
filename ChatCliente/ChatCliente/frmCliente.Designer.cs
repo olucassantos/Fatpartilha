@@ -36,8 +36,10 @@
             this.btnConectar = new System.Windows.Forms.Button();
             this.txtMensagem = new System.Windows.Forms.TextBox();
             this.btnEnviar = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.Files = new System.Windows.Forms.ListView();
             this.lblfiles = new System.Windows.Forms.Label();
+            this.lblusers = new System.Windows.Forms.Label();
+            this.usersList = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // txtServidorIP
@@ -54,6 +56,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(169, 20);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.Text = "Lucas";
             // 
             // label1
             // 
@@ -110,24 +113,42 @@
             this.btnEnviar.UseVisualStyleBackColor = true;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
-            // listView1
+            // Files
             // 
-            this.listView1.Location = new System.Drawing.Point(369, 92);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(267, 358);
-            this.listView1.TabIndex = 8;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.Files.Location = new System.Drawing.Point(368, 125);
+            this.Files.Name = "Files";
+            this.Files.Size = new System.Drawing.Size(267, 142);
+            this.Files.TabIndex = 8;
+            this.Files.UseCompatibleStateImageBehavior = false;
             // 
             // lblfiles
             // 
             this.lblfiles.AutoSize = true;
             this.lblfiles.Font = new System.Drawing.Font("Trebuchet MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfiles.Location = new System.Drawing.Point(410, 23);
+            this.lblfiles.Location = new System.Drawing.Point(410, 92);
             this.lblfiles.Name = "lblfiles";
             this.lblfiles.Size = new System.Drawing.Size(196, 26);
             this.lblfiles.TabIndex = 9;
             this.lblfiles.Text = "Arquivos disponiveis";
             this.lblfiles.Click += new System.EventHandler(this.lblfiles_Click);
+            // 
+            // lblusers
+            // 
+            this.lblusers.AutoSize = true;
+            this.lblusers.Font = new System.Drawing.Font("Trebuchet MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusers.Location = new System.Drawing.Point(410, 279);
+            this.lblusers.Name = "lblusers";
+            this.lblusers.Size = new System.Drawing.Size(194, 26);
+            this.lblusers.TabIndex = 11;
+            this.lblusers.Text = "Usuários disponiveis";
+            // 
+            // usersList
+            // 
+            this.usersList.Location = new System.Drawing.Point(368, 308);
+            this.usersList.Name = "usersList";
+            this.usersList.Size = new System.Drawing.Size(267, 142);
+            this.usersList.TabIndex = 10;
+            this.usersList.UseCompatibleStateImageBehavior = false;
             // 
             // frmCliente
             // 
@@ -135,8 +156,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(647, 462);
+            this.Controls.Add(this.lblusers);
+            this.Controls.Add(this.usersList);
             this.Controls.Add(this.lblfiles);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.Files);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.txtMensagem);
             this.Controls.Add(this.btnConectar);
@@ -162,8 +185,10 @@
         private System.Windows.Forms.Button btnConectar;
         private System.Windows.Forms.TextBox txtMensagem;
         private System.Windows.Forms.Button btnEnviar;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView Files;
         private System.Windows.Forms.Label lblfiles;
+        private System.Windows.Forms.Label lblusers;
+        private System.Windows.Forms.ListView usersList;
     }
 }
 

@@ -120,9 +120,50 @@ namespace ChatServidor
                     {
                         continue;
                     }
+
                     // Envia a mensagem para o usuário atual no laço
                     swSenderSender = new StreamWriter(tcpClientes[i].GetStream());
                     swSenderSender.WriteLine("Administrador: " + Mensagem);
+                    swSenderSender.Flush();
+                    swSenderSender = null;
+                }
+                catch // Se houver um problema , o usuário não existe , então remove-o
+                {
+                    RemoveUsuario(tcpClientes[i]);
+                }
+            }
+        }
+
+
+
+        // Envia lista de usuários
+        public static void UserListSend()
+        {
+            StreamWriter swSenderSender;
+
+            // Exibe primeiro na aplicação
+            e = new StatusChangedEventArgs("Atualizando lista de ususários para todos...");
+            OnStatusChanged(e);
+
+            // Cria um array de clientes TCPs do tamanho do numero de clientes existentes
+            TcpClient[] tcpClientes = new TcpClient[ChatServidor.htUsuarios.Count];
+            // Copia os objetos TcpClient no array
+            ChatServidor.htUsuarios.Values.CopyTo(tcpClientes, 0);
+            // Percorre a lista de clientes TCP
+            for (int i = 0; i < tcpClientes.Length; i++)
+            {
+                // Tenta enviar uma mensagem para cada cliente
+                try
+                {
+                    // Se a conexão for nula sai...
+                    if (tcpClientes[i] == null)
+                    {
+                        continue;
+                    }
+
+                    // Envia a mensagem para o usuário atual no laço
+                    swSenderSender = new StreamWriter(tcpClientes[i].GetStream());
+                    swSenderSender.WriteLine("User", ChatServidor.htUsuarios);
                     swSenderSender.Flush();
                     swSenderSender = null;
                 }
@@ -141,13 +182,13 @@ namespace ChatServidor
 
             TcpClient[] tcpClientes = new TcpClient[ChatServidor.htUsuarios.Count];
             ChatServidor.htUsuarios.Values.CopyTo(tcpClientes, 0);
+
             int i = 0;
             foreach (string key in ChatServidor.htUsuarios.Keys)
             {
                 userlist[i] = key;
                 i ++;
             }
-
             return userlist;
         }
 

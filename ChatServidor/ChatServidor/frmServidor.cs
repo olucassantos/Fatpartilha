@@ -4,11 +4,11 @@ using System;
 
 namespace ChatServidor
 {
-    public partial class Form1 : Form
+    public partial class frmServidor : Form
     {
         private delegate void AtualizaStatusCallback(string strMensagem);
 
-        public Form1()
+        public frmServidor()
         {
             InitializeComponent();
         }
@@ -73,8 +73,10 @@ namespace ChatServidor
             int i = 0;
             foreach (string name in mainServidor.usersList())
             {
-                userlist[i] = name;
-                txtLog.Text += userlist[i];
+                if (name != string.Empty && name != null)
+                {
+                    usersList.Items.Add(name, name, 0);
+                }
                 i++;
             }
             
@@ -87,6 +89,16 @@ namespace ChatServidor
                 ChatServidor.EnviaMensagemAdmin(mstMessage.Text);
                 mstMessage.Clear();
             }
+        }
+
+        private void frmServirdor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void attClientList_Click(object sender, EventArgs e)
+        {
+            ChatServidor.UserListSend();
         }
     }
 }

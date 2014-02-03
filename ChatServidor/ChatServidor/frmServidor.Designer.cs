@@ -1,6 +1,6 @@
 ﻿namespace ChatServidor
 {
-    partial class Form1
+    partial class frmServidor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmServidor));
             this.txtLog = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAtender = new System.Windows.Forms.Button();
             this.usersList = new System.Windows.Forms.ListView();
+            this.UserListSet = new System.Windows.Forms.ImageList(this.components);
             this.txtIP = new System.Windows.Forms.TextBox();
             this.attUsuarios = new System.Windows.Forms.Button();
             this.mstMessage = new System.Windows.Forms.TextBox();
             this.send = new System.Windows.Forms.Button();
+            this.attClientList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtLog
@@ -46,6 +50,7 @@
             this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtLog.Size = new System.Drawing.Size(390, 229);
             this.txtLog.TabIndex = 0;
+            this.txtLog.TextChanged += new System.EventHandler(this.attUsuarios_Click);
             // 
             // label1
             // 
@@ -68,11 +73,21 @@
             // 
             // usersList
             // 
+            this.usersList.AllowColumnReorder = true;
+            this.usersList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.usersList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.usersList.LargeImageList = this.UserListSet;
             this.usersList.Location = new System.Drawing.Point(13, 361);
             this.usersList.Name = "usersList";
             this.usersList.Size = new System.Drawing.Size(390, 145);
             this.usersList.TabIndex = 4;
             this.usersList.UseCompatibleStateImageBehavior = false;
+            // 
+            // UserListSet
+            // 
+            this.UserListSet.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("UserListSet.ImageStream")));
+            this.UserListSet.TransparentColor = System.Drawing.Color.Transparent;
+            this.UserListSet.Images.SetKeyName(0, "User.png");
             // 
             // txtIP
             // 
@@ -109,12 +124,23 @@
             this.send.UseVisualStyleBackColor = true;
             this.send.Click += new System.EventHandler(this.send_Click);
             // 
-            // Form1
+            // attClientList
+            // 
+            this.attClientList.Location = new System.Drawing.Point(94, 332);
+            this.attClientList.Name = "attClientList";
+            this.attClientList.Size = new System.Drawing.Size(179, 23);
+            this.attClientList.TabIndex = 8;
+            this.attClientList.Text = "Atualizar Lista dos Cliente";
+            this.attClientList.UseVisualStyleBackColor = true;
+            this.attClientList.Click += new System.EventHandler(this.attClientList_Click);
+            // 
+            // frmServidor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(418, 518);
+            this.Controls.Add(this.attClientList);
             this.Controls.Add(this.send);
             this.Controls.Add(this.mstMessage);
             this.Controls.Add(this.attUsuarios);
@@ -123,8 +149,9 @@
             this.Controls.Add(this.txtIP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtLog);
-            this.Name = "Form1";
+            this.Name = "frmServidor";
             this.Text = "Chat Servidor";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmServirdor_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,6 +167,8 @@
         private System.Windows.Forms.Button attUsuarios;
         private System.Windows.Forms.TextBox mstMessage;
         private System.Windows.Forms.Button send;
+        private System.Windows.Forms.ImageList UserListSet;
+        private System.Windows.Forms.Button attClientList;
     }
 }
 

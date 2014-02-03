@@ -110,6 +110,11 @@ namespace ChatCliente
             }
         }
 
+        private void TestMessage(StreamReader message)
+        {
+            
+        }
+
         private void AtualizaLog(string strMensagem)
         {
             // Anexa texto ao final de cada linha
